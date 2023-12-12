@@ -25,7 +25,9 @@ docker-compose run rails bash -c "bundle exec bundle install"
 Nile-Core will now use local gem. Every time you make a change, rebuild gem and install and re-run bundle install in Nile-Core.
 
 ## To upload new version of gem to Gemfury
-Coming soon.
+```
+git push fury master
+```
 
 [![Gem Version](https://badge.fury.io/rb/athena_health.svg)](https://badge.fury.io/rb/athena_health)
 [![Continuous integration](https://github.com/HealthTechDevelopers/athena_health/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/HealthTechDevelopers/athena_health/actions/workflows/ci.yml)
