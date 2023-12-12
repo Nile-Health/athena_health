@@ -1,3 +1,32 @@
+# Nile Core
+
+## To use gem locally for development
+Build gem (replace # with version):
+```
+gem build athena_health.gemspec
+gem install athena_health-2.0.#.gem
+```
+Temporarily update docker-compose.yml in Nile-Core to add the following under rails:volumes:
+```
+- /path/to/athena/health/dev/:/athena_health
+```
+Rebuild docker containers in Nile-Core directory:
+```
+docker-compose up -d --build
+```
+Temporarily remove Gemfury source from Gemfile in Nile-Core and add the following:
+```
+gem 'athena_health', path: '/athena_health/'
+```
+Run bundle install in Nile-Core directory:
+```
+docker-compose run rails bash -c "bundle exec bundle install"
+```
+Nile-Core will now use local gem. Every time you make a change, rebuild gem and install and re-run bundle install in Nile-Core.
+
+## To upload new version of gem to Gemfury
+Coming soon.
+
 [![Gem Version](https://badge.fury.io/rb/athena_health.svg)](https://badge.fury.io/rb/athena_health)
 [![Continuous integration](https://github.com/HealthTechDevelopers/athena_health/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/HealthTechDevelopers/athena_health/actions/workflows/ci.yml)
 
