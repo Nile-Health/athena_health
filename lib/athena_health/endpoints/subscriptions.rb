@@ -78,7 +78,7 @@ module AthenaHealth
           collection_class: 'OrderCollection',
           path: 'orders',
           name: 'orders_signed_off',
-          plural_name: 'orders',
+          plural_name: 'signed_off_orders',
           verb: "signedoff"
         }
       ].freeze
