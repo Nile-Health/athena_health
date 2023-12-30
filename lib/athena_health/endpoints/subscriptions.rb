@@ -71,7 +71,7 @@ module AthenaHealth
           collection_class: 'OrderCollection',
           path: 'orders',
           name: 'orders_created',
-          plural_name: 'orders',
+          plural_name: 'created_orders',
           verb: "changed"
         },
         {
