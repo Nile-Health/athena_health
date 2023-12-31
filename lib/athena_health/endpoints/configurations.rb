@@ -45,11 +45,11 @@ module AthenaHealth
         AthenaHealth::InsuranceCollection.new(response)
       end
 
-      def all_order_types(practice_id:, search_value:)
+      def all_order_types(practice_id:, params: {})
         response = @api.call(
-          endpoint: "#{practice_id}/reference/order/lab",
+          endpoint: "#{practice_id}/configuration/ordertype",
           method: :get,
-          params: { searchvalue: search_value }
+          params: params
         )
 
         response.map { |ordertype| AthenaHealth::OrderType.new(ordertype) }
