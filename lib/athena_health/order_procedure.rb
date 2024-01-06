@@ -4,4 +4,3 @@ module AthenaHealth
       attribute :name,   String
     end
   end
-  
