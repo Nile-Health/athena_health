@@ -21,14 +21,14 @@ module AthenaHealth
         response.map { |medication| AthenaHealth::Medication.new(medication) }
       end
 
-      def all_conditions(practice_id:, search_value:)
+      def all_procedures(practice_id:, search_value:)
         response = @api.call(
-          endpoint: "#{practice_id}/reference/conditions",
+          endpoint: "#{practice_id}/reference/order/procedure",
           method: :get,
           params: { searchvalue: search_value }
         )
 
-        response.map { |condition| AthenaHealth::Condition.new(condition) }
+        response.map { |order_procedure| AthenaHealth::OrderProcedure.new(order_procedure)}
       end
 
 
