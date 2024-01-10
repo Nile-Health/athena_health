@@ -66,6 +66,13 @@ gem build athena_health.gemspec
 curl -F package=@athena_health-2.0.#.gem https://TOKEN@push.fury.io/nile-health/
 
 ```
+## Bundle update on Nile-Core
+
+After uploading a new version to Gemfury, remember to do a "bundle update" on NileCore 
+```
+docker-compose run rails bash -c "bundle exec bundle update"
+```
+
 
 [![Gem Version](https://badge.fury.io/rb/athena_health.svg)](https://badge.fury.io/rb/athena_health)
 [![Continuous integration](https://github.com/HealthTechDevelopers/athena_health/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/HealthTechDevelopers/athena_health/actions/workflows/ci.yml)
